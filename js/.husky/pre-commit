@@ -1,14 +1,5 @@
 #!/bin/sh
 
-# Get the path the the Husky script.
-FILE="$(dirname "$0")/_/husky.sh"
-
-# Exit if Husky is not installed.
-if [ ! -f "$FILE" ]; then
-  exit 0;
-fi
-
-# Run the Husky script, and pre-commit hooks.
-. $FILE
+# The Husky script is run as part of npm test, and pre-commit hooks.
 cd js
 npx lint-staged
